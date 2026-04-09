@@ -1,5 +1,6 @@
 google colab link : https://colab.research.google.com/drive/14MeJasEu656F-Rajx68e8kg95ycTmPE2?usp=sharing
 
+project demo video Youtube link : https://youtu.be/jUyTF1OmikY
 
 
 # 🧘‍♂️ Yoga Pose Detection System using Deep Learning

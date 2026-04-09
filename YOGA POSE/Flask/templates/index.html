@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yoga Pose</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+<h2>YOGA POSE</h2>
+<ul>
+<li><a class="active" href="/">HOME</a></li>
+<li><a href="/about">ABOUT</a></li>
+<li><a href="/models">MODELS</a></li>
+<li><a href="/contact">CONTACT</a></li>
+<li><a href="/iinput">IMAGE</a></li>
+<li><a href="/vinput">VIDEO</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<img src="{{ url_for('static', filename='assets/img/bn.jpeg') }}" alt="">
+<h1>YOGA</h1>
+
+<div class="divider">
+    <span class="star">★</span>
+</div>
+
+<p class="tagline">Exercise • Therapy • Spiritual</p>
+<a href="/iinput" class="btn">Try Now</a>
+</div>
+
+</body>
+</html>

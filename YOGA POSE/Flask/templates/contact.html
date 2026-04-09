@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+<h2>YOGA POSE</h2>
+<ul>
+<li><a href="/">HOME</a></li>
+<li><a href="/about">ABOUT</a></li>
+<li><a href="/models">MODELS</a></li>
+<li><a class="active" href="/contact">CONTACT</a></li>
+<li><a href="/iinput">IMAGE</a></li>
+<li><a href="/vinput">VIDEO</a></li>
+</ul>
+</nav>
+
+<div class="contact-section">
+
+    <h1>CONTACT ME</h1>
+
+    <!-- Divider -->
+    <div class="divider">
+        <span class="star">★</span>
+    </div>
+
+    <!-- FORM -->
+    <form class="contact-form">
+
+        <input type="text" placeholder="Full name" required>
+        <input type="email" placeholder="Email address" required>
+        <input type="text" placeholder="Phone number">
+        <textarea placeholder="Message" rows="5"></textarea>
+
+        <button type="submit">Send</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

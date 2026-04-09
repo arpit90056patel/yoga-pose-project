@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Video Upload</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+<h2>YOGA POSE</h2>
+<ul>
+<li><a href="/">HOME</a></li>
+<li><a href="/about">ABOUT</a></li>
+<li><a href="/models">MODELS</a></li>
+<li><a href="/contact">CONTACT</a></li>
+<li><a href="/iinput">IMAGE</a></li>
+<li><a class="active" href="/vinput">VIDEO</a></li>
+</ul>
+</nav>
+
+<div class="upload-container">
+
+    <h1>Upload Video</h1>
+
+    <div class="divider">
+        <span class="star">★</span>
+    </div>
+
+    <form method="POST" action="/voutput" enctype="multipart/form-data" class="upload-card">
+
+        <input type="file" name="file" id="videoInput" accept="video/*" required onchange="previewVideo(event)">
+        
+        <p id="fileName"></p>
+
+        <!-- VIDEO PREVIEW -->
+        {% if video_path %}
+        <video id="previewVideo" controls style="display:block;">
+            <source src="{{ video_path }}" type="video/mp4">
+        </video>
+        {% else %}
+        <video id="previewVideo" controls style="display:none;"></video>
+        {% endif %}
+
+        <button type="submit">Upload Video</button>
+
+        <p id="loading" style="display:none;">Processing video...</p>
+
+    </form>
+
+    {% if prediction %}
+    <h2 class="result">Predicted Yoga pose is: {{ prediction }}</h2>
+    {% endif %}
+
+</div>
+
+<script>
+function previewVideo(event){
+    const file = event.target.files[0];
+    document.getElementById("fileName").innerText = file.name;
+
+    const video = document.getElementById("previewVideo");
+    video.src = URL.createObjectURL(file);
+    video.style.display = "block";
+}
+
+// loader
+document.querySelector("form").onsubmit = function(){
+    document.getElementById("loading").style.display = "block";
+}
+</script>
+
+</body>
+</html>

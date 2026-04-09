@@ -1,0 +1,451 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI;
+    background:linear-gradient(135deg,#1abc9c,#16a085);
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    background:rgba(0, 0, 25, 0.8);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero img{
+    width:200px;
+    margin-bottom:20px;
+    border-radius: 10%;
+}
+
+.hero h1{
+    font-size:60px;
+}
+
+.btn{
+    margin-top:20px;
+    padding:10px 20px;
+    background:#f1c40f;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+/* UPLOAD */
+.upload{
+    height:80vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.upload form{
+    background:rgba(255,255,255,0.1);
+    padding:30px;
+    border-radius:10px;
+}
+
+.upload input{
+    margin:10px;
+}
+
+.upload button{
+    padding:10px 20px;
+    background:#f1c40f;
+    border:none;
+    border-radius:8px;
+}
+
+/* SECTION */
+.section{
+    padding:50px;
+    text-align:center;
+}
+/* DIVIDER */
+.divider {
+    position: relative;
+    width: 250px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LEFT LINE */
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: white;
+}
+
+/* GAP + STAR */
+.star {
+    margin: 0 15px;   /* 👈 ye gap control karega */
+    font-size: 20px;
+    color: #f6f2e4;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* HEADING */
+.about-section h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+
+/* CONTENT */
+.about-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+}
+
+.about-content div {
+    width: 45%;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* BUTTONS */
+.about-buttons {
+    margin-top: 40px;
+}
+
+.btn-outline {
+    padding: 10px 25px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+/* ACTIVE NAV LINK */
+nav .active {
+    background: #1abc9c;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content div {
+        width: 100%;
+    }
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #2c3e50, #1c1f22);
+    text-align: center;
+}
+
+/* HEADING */
+.contact-section h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* DIVIDER */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 30px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    width: 70px;
+    height: 2px;
+    background: #2ecc71;
+}
+
+.star {
+    margin: 0 12px;
+    color: #2ecc71;
+    font-size: 18px;
+}
+
+/* FORM */
+.contact-form {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* INPUTS */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #dcdcdc;
+    color: #333;
+}
+
+/* BUTTON */
+.contact-form button {
+    width: 80px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #aaa;
+    cursor: pointer;
+}
+
+/* ACTIVE NAV */
+nav .active {
+    background: #1abc9c;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .contact-form {
+        width: 90%;
+    }
+}
+
+/* MODELS SECTION */
+.models-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f4f4f4;
+    color: #2c3e50;
+}
+
+.models-section h1 {
+    font-size: 45px;
+}
+
+/* GRID */
+.models-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+/* CARDS */
+.card {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    color: #1abc9c;
+    transform: scale(1.1);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* MODAL BOX */
+.modal-content {
+    background: #f4f4f4;
+    padding: 30px;
+    width: 70%;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* CLOSE BUTTON */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* IMAGE */
+.modal-content img {
+    width: 80%;
+    margin: 20px 0;
+}
+
+/* BUTTON */
+.modal-content button {
+    padding: 10px 20px;
+    background: #1abc9c;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* DIVIDER SAME FOR ALL PAGES */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto 30px;
+    width: fit-content;
+}
+
+/* LINES */
+.divider::before,
+.divider::after {
+    content: "";
+    width: 80px;
+    height: 2px;
+    background: #2c3e50;   /* models page ke liye dark color */
+}
+
+/* STAR */
+.star {
+    margin: 0 12px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.modal-content {
+    color: #2c3e50;   /* 👈 text visible ho jayega */
+}
+
+
+/* CONTAINER */
+.upload-container {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CARD */
+.upload-card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* FILE INPUT */
+.upload-card input {
+    margin-bottom: 10px;
+}
+
+/* FILE NAME */
+#fileName {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* IMAGE PREVIEW */
+#preview {
+    width: 250px;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 10px;
+    display: none;
+}
+
+/* BUTTON */
+.upload-card button {
+    padding: 12px 25px;
+    background: #00c896;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.upload-card button:hover {
+    background: #00a67d;
+    transform: scale(1.05);
+}
+
+/* RESULT */
+.result {
+    margin-top: 20px;
+}
+
+/* VIDEO PREVIEW */
+#previewVideo {
+    width: 300px;
+    margin: 15px 0;
+    border-radius: 10px;
+}

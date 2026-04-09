@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Models</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+<h2>YOGA POSE</h2>
+<ul>
+<li><a href="/">HOME</a></li>
+<li><a href="/about">ABOUT</a></li>
+<li><a class="active" href="/models">MODELS</a></li>
+<li><a href="/contact">CONTACT</a></li>
+<li><a href="/iinput">IMAGE</a></li>
+<li><a href="/vinput">VIDEO</a></li>
+</ul>
+</nav>
+
+<div class="models-section">
+
+    <h1>MODELS</h1>
+
+    <div class="divider">
+        <span class="star">★</span>
+    </div>
+
+    <!-- MODEL CARDS -->
+    <div class="models-grid">
+        <div class="card" onclick="openModal('Inception V3')">Inception V3</div>
+        <div class="card" onclick="openModal('Xception')">Xception</div>
+        <div class="card" onclick="openModal('ResNet 50')">ResNet 50</div>
+        <div class="card" onclick="openModal('VGG 19')">VGG 19</div>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modelModal" class="modal">
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2 id="modalTitle">Model Name</h2>
+
+        <div class="divider">
+            <span class="star">★</span>
+        </div>
+
+        <img id="modalImage" src="" alt="model">
+
+        <p id="modalText"></p>
+
+        <a href="#" class="link">Link</a>
+        <button onclick="closeModal()">Close Window</button>
+
+    </div>
+</div>
+
+<script>
+
+function openModal(model){
+
+    document.getElementById("modelModal").style.display = "flex";
+
+    document.getElementById("modalTitle").innerText = model;
+
+    if(model === "Inception V3"){
+        document.getElementById("modalImage").src = "/static/assets/img/inception.png";
+        document.getElementById("modalText").innerText =
+        "InceptionV3 is a convolutional neural network that is 48 layers deep. It can classify images into 1000 categories.";
+    }
+
+    if(model === "Xception"){
+        document.getElementById("modalImage").src = "/static/assets/img/xception.png";
+        document.getElementById("modalText").innerText =
+        "Xception is based on depthwise separable convolutions and is highly efficient.";
+    }
+
+    if(model === "ResNet 50"){
+        document.getElementById("modalImage").src = "/static/assets/img/ResNet.jpg";
+        document.getElementById("modalText").innerText =
+        "ResNet50 uses residual learning to solve vanishing gradient problem.";
+    }
+
+    if(model === "VGG 19"){
+        document.getElementById("modalImage").src = "/static/assets/img/vgg.jpg";
+        document.getElementById("modalText").innerText =
+        "VGG19 is a deep CNN with 19 layers known for simplicity.";
+    }
+}
+
+function closeModal(){
+    document.getElementById("modelModal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

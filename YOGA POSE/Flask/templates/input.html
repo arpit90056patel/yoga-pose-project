@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Upload</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+<h2>YOGA POSE</h2>
+<ul>
+<li><a href="/">HOME</a></li>
+<li><a href="/about">ABOUT</a></li>
+<li><a href="/models">MODELS</a></li>
+<li><a href="/contact">CONTACT</a></li>
+<li><a class="active" href="/iinput">IMAGE</a></li>
+<li><a href="/vinput">VIDEO</a></li>
+</ul>
+</nav>
+
+<div class="upload-container">
+
+    <h1>Upload Image</h1>
+
+    <div class="divider">
+        <span class="star">★</span>
+    </div>
+
+    <form method="POST" action="/ioutput" enctype="multipart/form-data" class="upload-card">
+
+        <input type="file" name="file" id="fileInput" required onchange="previewImage(event)">
+
+        <p id="fileName"></p>
+
+        <!-- IMAGE PREVIEW -->
+        <img id="preview" src="" alt="Preview">
+
+        <button type="submit">Upload Image</button>
+
+    </form>
+
+    {% if prediction %}
+    <h2 class="result">Predicted Yoga pose is: {{ prediction }}</h2>
+    {% endif %}
+
+</div>
+
+<script>
+function previewImage(event){
+    const file = event.target.files[0];
+    document.getElementById("fileName").innerText = file.name;
+
+    const reader = new FileReader();
+    reader.onload = function(){
+        const img = document.getElementById("preview");
+        img.src = reader.result;
+        img.style.display = "block";
+    }
+    reader.readAsDataURL(file);
+}
+</script>
+
+</body>
+</html>
